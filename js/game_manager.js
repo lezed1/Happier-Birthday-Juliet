@@ -162,7 +162,12 @@ GameManager.prototype.move = function (direction) {
           self.score += merged.value;
 
           // The mighty 2048 tile
-          if (merged.value === 9007199254740992) self.won = true;
+          if (merged.value === 16384) {
+            self.won = true;
+            setTimeout(function () {
+              document.querySelector("#confetti-canvas").classList.add("yes");
+            }, 1000)
+          }
         } else {
           self.moveTile(tile, positions.farthest);
         }

@@ -2,36 +2,43 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>9007199254740992</title>
+  <title>9007199254740992!</title>
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link href="style/others.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
+<canvas id="confetti-canvas"></canvas>
   <div class="container">
     <div class="heading">
-      <h1 class="title">9007199254740992</h1>
+      <h1 class="title">9007199254740992!</h1>
       <div class="scores-container">
-	    <img src="http://linux17.csie.ntu.edu.tw:7122/data/tmp9.png" width="0px" height="0px">
-		<!--Don't worry. This is just use to record how many people visit this. XD-->
         <div class="score-container">0</div>
         <div class="best-container">0</div>
       </div>
     </div>
-    <p class="game-intro">Join the numbers and get to the <strong>9007199254740992 tile!</strong></p>
+
+    <div class="above-game">
+      <p class="game-intro">Merge alike letters and get to the <strong>"!" tile!</strong> By Zander Bolgar.</p>
+      <a class="restart-button">New Game</a>
+    </div>
 
     <div class="game-container">
       <div class="game-message">
         <p></p>
+        <p>Woo-Hoo!</p>
         <div class="lower">
-          <a class="retry-button">Try again</a>
+          <a class="retry-button">Restart game</a>
         </div>
       </div>
 
@@ -128,11 +135,11 @@
 	</div>
 
     <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same letter touch, they <strong>merge into one</strong>!
+    
     </p>
 	<hr>
-	<p>
-    <strong class="important">Note:</strong> This site is <font color="red"><strong>not</strong></font> the official version of 2048. You can play the official version on <a href="http://gabrielecirulli.github.io/2048/">gabrielecirulli.github.io/2048.</a>
+	<p>This site is based on the official version of Juliet's version of 2048 and <a href="https://github.com/notcome/9007199254740992">9007199254740992 with auto backup</a>. Juliet spent a while figuring out JavaScript. You better be happy with this. (Also, when you click "Hip Hip Hooray!" you can keep on playing 9007199254740992; two "!" tiles should merge into 512 and everything should be normal.)
     </p>
 
 	
@@ -146,6 +153,7 @@
 	</p>
   </div>
 
+  <script src="js/confetti.js"></script>
   <script src="js/animframe_polyfill.js"></script>
   <script src="js/keyboard_input_manager.js"></script>
   <script src="js/html_actuator.js"></script>

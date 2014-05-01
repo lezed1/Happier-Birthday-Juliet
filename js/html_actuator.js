@@ -52,7 +52,71 @@ HTMLActuator.prototype.addTile = function (tile) {
   classes = ["tile", "tile-" + 1048576, positionClass];
   this.applyClasses(element, classes);
 
-  element.textContent = tile.value;
+  var display;
+  switch(tile.value) {
+    
+    case 2:
+      display = "H";
+      break;
+    
+    case 4:
+      display = "a";
+      break;
+    
+    case 8:
+      display = "p";
+      break;
+    
+    case 16:
+      display = "p";
+      break;
+    
+    case 32:
+      display = "y";
+      break;
+    
+    case 64:
+      display = "B";
+      break;
+    
+    case 128:
+      display = "i";
+      break;
+    
+    case 256:
+      display = "r";
+      break;
+    
+    case 512:
+      display = "t";
+      break;
+    
+    case 1024:
+      display = "h";
+      break;
+    
+    case 2048:
+      display = "d";
+      break;
+    
+    case 4096:
+      display = "a";
+      break;
+    
+    case 8192:
+      display = "y";
+      break;
+    
+    case 16384:
+      display = "!";
+      break;
+
+    default:
+      display = tile.value;
+      break;
+  }
+
+  element.textContent = display;
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -113,7 +177,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (won) {
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "You win!" : "Game over!";
+  var message = won ? "Happy Birthday Juliet!" : "Game over!";
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
